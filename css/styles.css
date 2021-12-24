@@ -4,64 +4,63 @@
 
 body {
   height: 100vh;
-  background-image: radial-gradient(
-    circle at 79.83% 44.74%,
-    #5f491a 0,
-    #5b4019 10%,
-    #533617 20%,
-    #472a14 30%,
-    #381e0f 40%,
-    #271103 50%,
-    #180000 60%,
-    #000000 70%,
-    #000000 80%,
-    #000000 90%,
-    #000000 100%
-  );
+  background-color: #100e0e;
 }
 .body-home {
   overflow: hidden;
   background-repeat: no-repeat;
-  /* background-size: cover; */
+  display: flex;
+  align-items: center;
 }
 .container {
   display: grid;
-  grid-template-columns: 5fr 1fr;
-  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 4fr 2fr;
+  grid-template-areas:
+    "header       header"
+    "main         icons"
+    "footer-1     footer-1";
   color: #fff;
   margin: 0 auto;
-  width: 95%;
-  height: 98%;
+  width: 90%;
+  height: 90%;
   font-family: "Montserrat", sans-serif;
-  grid-gap: 20px;
+  background-color: #201a1a;
 }
 /*------------------------STYLE OF HOME PAGE -------------------------- */
 
 /*------- STYLE OF THE HEADER------ */
 .header {
-  grid-column: 1/-1;
+  grid-area: header;
   display: flex;
   flex-direction: row;
-  z-index: 200;
   height: 100px;
 }
 /* --------------------------------- */
 
 /*----------- LOGO STYLES -----------*/
 .home-logo {
-  width: 6%;
-  height: 70px;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  width: 16%;
+  align-items: center;
+  justify-content: flex-end;
+}
+.home-logo span > a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 .img-logo {
-  width: 100%;
+  height: 100px;
+  width: 100px;
 }
 /* ---------------------------------- */
 
 /* ------------- NAV STYLES --------- */
 .menu-nav {
   display: flex;
-  width: 78%;
+  width: 68%;
   align-items: center;
   justify-content: center;
 }
@@ -101,7 +100,7 @@ body {
   width: 16%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 3rem;
 }
@@ -137,33 +136,31 @@ body {
 
 /* -------  STYLE OF MAIN ---------- */
 .main-home {
-  grid-column: 1/2;
+  grid-area: main;
   display: flex;
   flex-direction: row;
-  z-index: 20;
+  justify-content: center;
 }
 .title-description-home {
   flex-basis: 1070px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   padding: 50px 150px 50px 50px;
 }
 .name-coffeshop {
   font-size: 10rem;
   margin: 0;
   font-family: sans-serif;
-  letter-spacing: 0.11em;
-  color: #f7f2f2;
-  text-shadow: 2px 2px 2px #fff;
+  /* letter-spacing: 0.11em; */
+  color: #ab7657;
 }
 .description-home {
-  font-weight: 100;
+  color: #8e5e43;
+  font-weight: 500;
   line-height: 1.8;
   padding: 0 10rem 0 0.6rem;
 }
 .order {
-  /* height: 20%; */
   padding: 1rem 0 0 0.6rem;
 }
 
@@ -171,29 +168,26 @@ body {
   width: 200px;
   height: 40px;
   border-radius: 10px;
-  color: #fff;
-  border: none;
+  border: 1px solid #fece2f;
   background: none;
-  background-color: rgb(212, 156, 34);
   text-transform: uppercase;
   padding: 0.4em;
   letter-spacing: 0.05rem;
   font-weight: 700;
+}
+.order-button > a {
+  text-decoration: none;
+  color: #af8d7b;
 }
 .order-button:hover {
   background-color: #fece2f;
   transition: background-color 0.5s;
 }
 .img-home {
-  position: absolute;
-  bottom: 2rem;
-  right: 5rem;
-  transform: rotate(-65deg);
-  width: 820px;
-  height: 820px;
-  z-index: 10;
+  height: 680px;
+  width: 360px;
+  z-index: 100;
 }
-
 .img-home-2 {
   display: none;
   width: 200px;
@@ -207,21 +201,46 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
+  margin-top: auto;
+  color: gray;
 }
 .footer-copyr {
   text-align: center;
-  /* height: 20px; */
   letter-spacing: 0.1rem;
   align-self: flex-end;
 }
 .icons-rsocials {
-  grid-column: 2/3;
-  grid-row: 2/3;
+  grid-area: icons;
+  display: flex;
+  flex-direction: row;
+  gap: 6rem;
+}
+.img-circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle {
+  background-color: #2d221e;
+  position: absolute;
+  width: 410px;
+  height: 410px;
+
+  border-radius: 50%;
+}
+.img-home {
+  top: 0;
+  left: 0;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin: 0 auto;
+}
+.r-socials {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 3rem;
-  justify-content: flex-end;
+  justify-content: center;
+  gap: 4rem;
 }
 
 .f-icon,
@@ -243,21 +262,82 @@ body {
   }
 } */
 
-/* ----------------- STYLE OF THE PRODUCTS PAGE ------------------------ */
+@media screen and (max-width: 1600px) {
+  .container-home {
+    grid-gap: 0;
+  }
+  .img-home {
+    height: 430px;
+    width: 250px;
+  }
+
+  .img-logo {
+    width: 70px;
+    height: 70px;
+  }
+  .circle {
+    width: 270px;
+    height: 270px;
+  }
+  .menu-nav > ul {
+    gap: 4rem;
+  }
+  .menu-nav2 > ul {
+    padding-left: 150px;
+  }
+  .menu-nav a,
+  .shop-register > a {
+    font-size: 0.9rem;
+  }
+  .home-logo {
+    font-size: 0.9rem;
+  }
+
+  .title-description-home {
+    display: flex;
+    justify-content: center;
+    padding-left: 100px;
+    padding-top: 0;
+  }
+
+  .shop-register i {
+    font-size: 1rem;
+  }
+  .name-coffeshop {
+    font-size: 5rem;
+    letter-spacing: 0.2rem;
+  }
+  .icons-rsocials {
+    gap: 4rem;
+  }
+  .description-home {
+    font-size: 0.8rem;
+  }
+  .footer-copyr {
+    font-size: 0.7rem;
+    align-self: flex-end;
+  }
+  .r-socials a {
+    font-size: 1.2rem;
+  }
+  .r-socials {
+    gap: 3rem;
+  }
+}
+/* -------------------- */
 .body-2 {
-  /* background: rgba(31, 30, 30, 1); */
   background: #000;
 }
 .container-layaout-2 {
   grid-template-areas:
-    "header       header        header"
-    "main         main          main"
-    "footer-1     footer-1      footer-1";
+    "header       header"
+    "main         main"
+    "footer-1     footer-1";
+  background: none;
 }
 
 .menu-nav2 > ul {
-  /* justify-content: flex-end; */
-  padding-left: 170px;
+  padding-left: 0px;
 }
 
 .main-productos {
@@ -460,7 +540,6 @@ body {
 
 .contact-form form {
   display: grid;
-  /* grid-template-columns: 1fr 1fr; */
 }
 .contact-form form .block {
   grid-column: 1/-1;
@@ -519,10 +598,6 @@ body {
 
 /* LARGE SIZE */
 @media only screen and (min-width: 700px) {
-  /* body {
-      padding: 0 1rem;
-    } */
-
   .contact-form form {
     grid-template-columns: 1fr 1fr;
   }
@@ -543,202 +618,93 @@ body {
   }
 }
 
-@media screen and (max-width: 1600px) {
-  .container-home {
-    grid-gap: 0;
-  }
-  .img-home {
-    width: 540px;
-    height: 540px;
-    top: 5rem;
-  }
-
-  .img-logo {
-    margin-top: 9px;
-  }
-
-  .menu-nav > ul {
-    gap: 4rem;
-  }
-  .menu-nav2 > ul {
-    padding-left: 150px;
-  }
-
-  .menu-nav a,
-  .shop-register > a {
-    font-size: 0.9rem;
-  }
-  .title-description-home {
-    padding: 40px 300px 50px 40px;
-  }
-  .shop-register i {
-    font-size: 1rem;
-  }
-  .name-coffeshop {
-    font-size: 7rem;
-  }
-
-  .description-home {
-    font-size: 0.8rem;
-  }
-  .footer-copyr {
-    font-size: 0.7rem;
-    align-self: flex-end;
-  }
-}
-
 @media screen and (max-width: 1200px) {
-  .body-home {
-    overflow: visible;
+  .container {
+    background: none;
   }
-  .container-home {
-    grid-template-areas:
-      "header       header        header"
-      "main         main          main"
-      "footer-1     footer-1      footer-1"
-      "footer-2     footer-2      footer-2";
-    width: 90%;
-    height: 96%;
-  }
-
-  .icons-rsocials {
-    grid-area: footer-2;
-    flex-direction: row;
+  .menu-nav ul {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: #000;
+    width: 100%;
+    left: 0;
+    display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
+    clip-path: circle(0 at center);
+    transition: clip-path 1s ease-in-out;
+    z-index: 10;
+    font-size: 0.1rem;
   }
-  .img-home {
-    width: 430px;
-    height: 430px;
-    top: 8rem;
+  .nav-img {
+    position: relative;
   }
-  .header {
-    grid-area: header;
+  .nav-label {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    z-index: 30;
   }
 
-  .main-home {
-    grid-area: main;
+  .nav-input:checked + ul {
+    clip-path: circle(100% at center);
   }
 
-  .footer {
-    grid-area: footer-1;
+  .home-logo {
+    width: 50%;
+    justify-content: flex-start;
+  }
+  .shop-register {
+    width: 40%;
+    justify-content: flex-end;
   }
 
   .title-description-home {
-    justify-content: flex-start;
+    padding-left: 0;
+    align-items: center;
     padding-top: 0;
     padding-bottom: 0;
   }
-}
 
-@media screen and (max-width: 900px) {
-  .body-home {
-    background: rgba(0, 0, 0, 98%);
-  }
-  .container-home {
-    width: 100%;
-    height: 100%;
-    /* grid-gap: 1rem; */
-  }
-  .header a {
-    font-size: 0.8rem;
-  }
-  .menu-nav > ul {
-    gap: 3rem;
-  }
   .menu-nav2 > ul {
-    padding: 0;
-  }
-  .home-logo {
-    height: 100%;
+    padding-left: 0;
   }
 
-  .img-logo {
-    margin-top: 17px;
-  }
-
-  .title-description-home {
-    padding-top: 20px;
-  }
-
-  .name-coffeshop {
-    font-size: 5rem;
+  .menu-nav a {
+    font-size: 0.9rem;
   }
 
   .description-home {
-    padding: 0 3rem 0 0;
-  }
-
-  .img-home {
-    top: 5rem;
-    right: 0;
-    width: 410px;
-    height: 410px;
-    transform: rotate(-40deg);
-  }
-
-  .order-button {
-    width: 160px;
-    height: 35px;
-    font-size: 0.75rem;
-  }
-  .icons-rsocials a {
-    font-size: 1rem;
-  }
-  .quienes-somos,
-  .nuestra-mision {
-    display: block;
-  }
-  .main-aboutUs .img-aboutUs {
-    width: 250px;
-    height: 250px;
-  }
-
-  .main-aboutUs {
-    flex-direction: column;
-    justify-content: center;
     padding: 0;
-    gap: 0;
   }
 
-  .about-description {
-    margin-bottom: 3rem;
-    border: none;
-    border-bottom: 2px solid #fece2f;
+  .menu-nav {
+    width: 0%;
   }
-
-  .img-phrase > img {
-    height: 200px;
-    width: 200px;
+  .order {
+    display: flex;
+    width: 100%;
+    padding: 0;
   }
 }
 /*  */
 @media only screen and (max-width: 600px) {
   .body-home {
-    height: 100vh;
-    background-image: radial-gradient(
-      circle at 79.83% 44.74%,
-      #5f491a 0,
-      #5b4019 10%,
-      #533617 20%,
-      #472a14 30%,
-      #381e0f 40%,
-      #271103 50%,
-      #180000 60%,
-      #000000 70%,
-      #000000 80%,
-      #000000 90%,
-      #000000 100%
-    );
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
   }
   .container {
     grid-template-areas:
       "header       header        header"
       "main         main          main"
-      "footer-1     footer-1      footer-1";
+      "footer-1     footer-1    footer-1";
 
-    width: 90%;
-    height: 96%;
+    width: 100%;
+    height: 95%;
   }
   .header {
     grid-area: header;
@@ -750,14 +716,15 @@ body {
     grid-area: main;
   }
   .home-logo {
-    width: 40px;
-    height: auto;
-    align-items: flex-start;
+    width: 50%;
+    align-items: center;
+    justify-content: flex-start;
   }
-
   .img-logo {
-    width: 45px;
-    margin-top: 12px;
+    margin: 0;
+  }
+  .menu-nav {
+    width: 0%;
   }
 
   .img-home-2 {
@@ -767,11 +734,13 @@ body {
     top: 8.5rem;
     animation: animar 4s 1 linear;
   }
+  .icons-rsocials {
+    display: none;
+  }
 
   @keyframes animar {
     0% {
       transform: translateY(-280px);
-      /* transform: rotate(0deg); */
     }
 
     50% {
@@ -787,10 +756,9 @@ body {
     }
   }
   .shop-register {
-    align-items: flex-center;
-    height: 75px;
-    width: 300px;
-    justify-content: flex-start;
+    align-items: center;
+    width: 150px;
+    justify-content: center;
     gap: 2rem;
   }
 
@@ -813,12 +781,9 @@ body {
     z-index: 10;
     font-size: 0.1rem;
   }
-
   .nav-img {
     position: relative;
-    top: -12px;
   }
-
   .nav-label {
     display: block;
     cursor: pointer;
@@ -840,7 +805,7 @@ body {
   }
 
   .title-description-home {
-    padding: 0;
+    padding: 0 20px;
     display: flex;
     justify-content: flex-end;
   }
@@ -857,17 +822,12 @@ body {
   }
   .img-home {
     display: none;
-    width: 170px;
-    height: 170px;
-    top: 6.4rem;
-    right: 8rem;
-    margin-left: auto;
-    margin-right: auto;
   }
   .order {
     text-align: center;
     font-size: 0.7rem;
     padding: 0;
+    justify-content: center;
   }
   .order-button {
     width: 150px;
@@ -878,26 +838,19 @@ body {
     font-size: 0.7rem;
     display: flex;
     flex-direction: column;
+    height: 80px;
+    align-items: center;
+    margin-top: auto;
   }
   .footer-copyr {
     grid-template-columns: 1/3;
     text-align: center;
     width: 100%;
     margin: 0;
-    padding-top: 20px;
   }
   .icons-rsocials i {
     font-size: 0.9rem;
     transition: 0.5s;
-  }
-  .icons-rsocials {
-    grid-area: footer-1;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    margin-top: auto;
-    gap: 3rem;
-    z-index: 2;
   }
 
   .quienes-somos,
@@ -952,7 +905,6 @@ body {
     font-size: 0.5rem;
   }
 }
-
 @media screen and (max-width: 320px) {
   .img-home-2 {
     top: 5rem;
