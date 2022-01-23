@@ -24,11 +24,14 @@
 
 
         <!-- Background-image-2 -->
-        <img src="assets/images/purr-cat-with-cup.png" alt="" class="img-home-2">
+        <div class="bgimg-2">
+            <img src="assets/images/purr-cat-with-cup.png" alt="" class="img-home-2">
+        </div>
         <!-- ------------------ -->
 
         <!------------------- Inicio del header -------------------->
-        <header class="header header-home">
+
+        <nav class="menu-nav">
             <!-- Logo -->
             <div class="home-logo">
                 <a href="index.html">
@@ -42,32 +45,31 @@
             <!-- Logo -->
 
             <!------------ Navigation menu ----------->
-            <nav class="menu-nav">
-                <!-- Icon Menu-bar responsive -->
-                <label for="menu" class="nav-label">
-                    <img src="assets/icons/menu.svg" alt="bar icon" class="nav-img">
-                </label>
-                <input type="checkbox" id="menu" class="nav-input">
-                <!-- ----------------------- -->
+            <!-- Icon Menu-bar responsive -->
+            <label for="menu" class="nav-label">
+                <img src="assets/icons/menu.svg" alt="bar icon" class="nav-img">
+            </label>
+            <input type="checkbox" id="menu" class="nav-input">
+            <!-- ----------------------- -->
 
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pages/productos.html">Productos</a></li>
-                    <li><a href="pages/sobre_nosotros.html">Sobre Nosotros</a></li>
-                    <li><a href="pages/opiniones.html">opiniones</a></li>
-                    <li><a href="pages/contactos.html">Contactos</a></li>
-                </ul>
-            </nav>
+            <div class="nav__list">
+                <a href="index.html">Home</a>
+                <a href="pages/productos.html">Productos</a>
+                <a href="pages/sobre_nosotros.html">Sobre Nosotros</a>
+                <a href="pages/opiniones.html">Opiniones</a>
+                <a href="pages/contactos.html">Contactos</a>
+                <a href="pages/welcome.html">Login</a>
+            </div>
             <!-- ------------------------------------------ -->
             <div class="shop-register">
                 <a href="#" class="icon-shop">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
-                <a href="#" class="icon-register">
+                <a href="pages/welcome.html" class="icon-register">
                     <i class="fas fa-user"></i>
                 </a>
             </div>
-        </header>
+        </nav>
         <!--------------------- Fin del header -------------------------->
 
 

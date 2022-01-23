@@ -15,6 +15,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: 4fr 2fr;
+  grid-template-rows: auto;
   grid-template-areas:
     "header       header"
     "main         icons"
@@ -29,22 +30,22 @@ body {
 /*------------------------STYLE OF HOME PAGE -------------------------- */
 
 /*------- STYLE OF THE HEADER------ */
-.header {
+.menu-nav {
   grid-area: header;
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  height: 100px;
+  align-items: center;
+  justify-content: space-between;
 }
 /* --------------------------------- */
 
 /*----------- LOGO STYLES -----------*/
 .home-logo {
   display: flex;
-  flex-direction: row;
-  width: 16%;
   align-items: center;
   justify-content: flex-end;
 }
+
 .home-logo span > a {
   color: #fff;
   text-decoration: none;
@@ -58,44 +59,37 @@ body {
 /* ---------------------------------- */
 
 /* ------------- NAV STYLES --------- */
-.menu-nav {
+
+.nav__list {
   display: flex;
-  width: 68%;
+  flex-basis: 80%;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
 }
 
-.menu-nav > ul {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-  gap: 6em;
-}
-
-.menu-nav a {
-  color: white;
+.nav__list > a {
+  color: #fff;
+  position: relative;
   text-decoration: none;
   letter-spacing: 0.05em;
   font-size: 1.2em;
+  padding: 3px 0;
   font-weight: 500;
-  --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
-.menu-nav a::after {
+.nav__list a::after {
   content: "";
-  background: #fece2f;
-  display: block;
-  width: 95%;
-  margin-top: 3px;
-  height: 3px;
-  clip-path: var(--clippy);
-  transition: clip-path 0.7s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  background-color: #fece2f;
+  height: 2px;
+  transition: all 0.7s;
 }
-
+.nav__list a:hover::after {
+  width: 100%;
+}
 .shop-register {
   width: 16%;
   display: flex;
@@ -121,17 +115,14 @@ body {
 /* ----------------------------------------- */
 
 /* ---- NAV RESPONSIVE (BAR ICON) STYLES --- */
-.nav-input:checked + ul {
-  background: #000;
+.nav-input:checked + .nav__list {
+  background-color: #000;
 }
 .nav-label,
 .nav-input {
   display: none;
 }
 
-.menu-nav a:hover {
-  --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
 /* ----------------------------------------- */
 
 /* -------  STYLE OF MAIN ---------- */
@@ -192,6 +183,8 @@ body {
   display: none;
   width: 200px;
   height: 200px;
+  min-width: 130px;
+  min-height: 130px;
 }
 
 /* ---------- STYLE OF FOOTER -------- */
@@ -242,7 +235,6 @@ body {
   justify-content: center;
   gap: 4rem;
 }
-
 .f-icon,
 .ig-icon,
 .tw-icon {
@@ -254,14 +246,6 @@ body {
   transform: scale(1.5);
   transition: transform 0.8s;
 }
-
-/* @media (hover: hover) {
-  .icons-rsocials i:hover {
-    transform: scale(1.5);
-    transition: all 0.5s;
-  }
-} */
-
 @media screen and (max-width: 1600px) {
   .container-home {
     grid-gap: 0;
@@ -278,12 +262,6 @@ body {
   .circle {
     width: 270px;
     height: 270px;
-  }
-  .menu-nav > ul {
-    gap: 4rem;
-  }
-  .menu-nav2 > ul {
-    padding-left: 150px;
   }
   .menu-nav a,
   .shop-register > a {
@@ -513,9 +491,9 @@ body {
 
 .box-form {
   max-width: 1170px;
-  margin-left: auto;
-  margin-right: auto;
-  /* margin-top: 8rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .title-contact {
   text-align: center;
@@ -528,6 +506,7 @@ body {
   margin: 0;
   font-size: 0.8rem;
   text-align: start;
+  margin: 0 25px;
 }
 
 .contact-wrapper > * {
@@ -601,9 +580,13 @@ body {
   .contact-form form {
     grid-template-columns: 1fr 1fr;
   }
+  .main-contactos {
+    justify-content: center;
+  }
   .contact-wrapper {
     display: grid;
     grid-template-columns: 2fr 1fr;
+    width: 90%;
   }
 
   .contact-wrapper > * {
@@ -622,43 +605,14 @@ body {
   .container {
     background: none;
   }
-  .menu-nav ul {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    background: #000;
-    width: 100%;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  .menu-nav {
     align-items: center;
-    clip-path: circle(0 at center);
-    transition: clip-path 1s ease-in-out;
-    z-index: 10;
-    font-size: 0.1rem;
-  }
-  .nav-img {
-    position: relative;
-  }
-  .nav-label {
-    display: block;
-    cursor: pointer;
-    position: absolute;
-    right: 1rem;
-    z-index: 30;
-  }
-
-  .nav-input:checked + ul {
-    clip-path: circle(100% at center);
   }
 
   .home-logo {
-    width: 50%;
     justify-content: flex-start;
   }
   .shop-register {
-    width: 40%;
     justify-content: flex-end;
   }
 
@@ -667,10 +621,6 @@ body {
     align-items: center;
     padding-top: 0;
     padding-bottom: 0;
-  }
-
-  .menu-nav2 > ul {
-    padding-left: 0;
   }
 
   .menu-nav a {
@@ -682,7 +632,7 @@ body {
   }
 
   .menu-nav {
-    width: 0%;
+    /* width: 0%; */
   }
   .order {
     display: flex;
@@ -691,6 +641,44 @@ body {
   }
 }
 /*  */
+@media only screen and (max-width: 1000px) {
+  .nav__list {
+    position: fixed;
+    top: 65px;
+    bottom: 0;
+    background: #000;
+    width: 100%;
+    left: 0;
+    flex-direction: column;
+    clip-path: circle(0 at center);
+    transition: clip-path 1s ease-in-out;
+    font-size: 0.1rem;
+  }
+  .nav-input:checked + .nav__list {
+    clip-path: circle(100% at center);
+  }
+  .nav-img {
+    position: relative;
+  }
+
+  .nav-label {
+    display: block;
+    cursor: pointer;
+  }
+  .shop-register {
+    display: none;
+  }
+  .home-logo {
+    /* width: 50%; */
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .img-logo {
+    margin: 0;
+  }
+}
+
+/* --------------------------------------- */
 @media only screen and (max-width: 600px) {
   .body-home {
     display: flex;
@@ -700,13 +688,14 @@ body {
   .container {
     grid-template-areas:
       "header       header        header"
+      "img          img            img"
       "main         main          main"
       "footer-1     footer-1    footer-1";
 
     width: 100%;
     height: 95%;
   }
-  .header {
+  .menu-nav {
     grid-area: header;
   }
   .main {
@@ -715,24 +704,24 @@ body {
   .main-home {
     grid-area: main;
   }
-  .home-logo {
-    width: 50%;
-    align-items: center;
-    justify-content: flex-start;
-  }
+
   .img-logo {
     margin: 0;
   }
-  .menu-nav {
-    width: 0%;
-  }
 
+  .bgimg-2 {
+    grid-area: img;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .img-home-2 {
     display: block;
-    position: absolute;
-    left: 24%;
-    top: 8.5rem;
     animation: animar 4s 1 linear;
+  }
+  .shop-register {
+    display: none;
   }
   .icons-rsocials {
     display: none;
@@ -765,49 +754,10 @@ body {
   .shop-register i {
     font-size: 1.15rem;
   }
-  .menu-nav ul {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    background: #000;
-    width: 100%;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    clip-path: circle(0 at center);
-    transition: clip-path 1s ease-in-out;
-    z-index: 10;
-    font-size: 0.1rem;
-  }
-  .nav-img {
-    position: relative;
-  }
-  .nav-label {
-    display: block;
-    cursor: pointer;
-    position: absolute;
-    right: 1rem;
-    z-index: 30;
-  }
-
-  .nav-input:checked + ul {
-    clip-path: circle(100% at center);
-  }
-
-  .menu-nav2 > ul {
-    padding-left: 0;
-  }
-
-  .menu-nav a {
-    font-size: 0.9rem;
-  }
-
   .title-description-home {
     padding: 0 20px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
   .name-coffeshop {
     font-size: 2rem;
@@ -880,35 +830,228 @@ body {
     width: 200px;
   }
 }
-
-@media screen and (max-width: 380px) {
-  .img-home-2 {
-    top: 7rem;
-  }
+/* Estilos de logins */
+.body-welcome {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  /* min-height: 100vh; */
+  background-color: #1f222b;
+  /* background-color: #28292b; */
+  /* background-color: lightgray; */
+  /* background-color: #fff; */
+  /* background-color: #000; */
+  background-color: #1f1a30;
+  color: #fff;
+  overflow-x: hidden;
+  width: 100%;
+  /* align-items: center; */
+  font-family: "Roboto", sans-serif;
+}
+.container-welcome {
+  width: 100%;
+  /* height: 98%; */
+  /* background-color: #1f222b; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  color: #1f222b;
+  color: #fff;
+  gap: 0rem;
+}
+.nav {
+  /* width: 100px; */
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  justify-content: flex-end;
+}
+.titles {
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.12rem;
+  padding-left: 18px;
+}
+.title-2 {
+  color: #d3d3eb;
+}
+.title-1,
+.title-2 {
+  font-size: 40px;
+}
+.subtitle {
+  font-weight: bold;
+  /* color: #ddc01d; */
+}
+.subtitle span {
+  color: #ffc212;
+}
+.container-welcome {
+  grid-area: 2 / 1 / 3 / 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-@media screen and (max-width: 360px) {
-  .img-home-2 {
-    top: 6rem;
-    width: 180px;
-    height: 180px;
-  }
-  .name-coffeshop {
-    font-size: 1.4rem;
-  }
-  .description-home {
-    font-size: 0.7rem;
-    padding: 0 15px 0 15px;
-  }
-
-  .footer p {
-    font-size: 0.5rem;
-  }
+.titles h1 {
+  padding: 0;
+  margin: 0;
 }
-@media screen and (max-width: 320px) {
-  .img-home-2 {
-    top: 5rem;
-    width: 150px;
-    height: 150px;
-  }
+.container-img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.container-img img {
+  width: 350px;
+  height: 350px;
+}
+.container-image {
+  display: flex;
+  background-color: #ffc212;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+}
+.image {
+  width: 300px;
+  height: 280px;
+}
+.titles_image {
+  display: flex;
+  gap: 1rem;
+}
+.img-t1 {
+  /* background-color: #ffd538; */
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 43px;
+  height: 43px;
+}
+.titles_image img {
+  width: 40px;
+  height: 30px;
+}
+.container_buttons {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.container_buttons button,
+.button-createAccount-login button {
+  /* border-style: none; */
+  font-family: "Roboto", sans-serif;
+  border: none;
+  width: 160px;
+  /* background-color: #ffc212; */
+  background-color: #ffd538;
+  color: #1f222b;
+  font-weight: bold;
+  letter-spacing: 0.07rem;
+  height: 35px;
+  border-radius: 0 20%;
+  text-transform: uppercase;
+}
+.title-register-login {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.container-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+.container-wrapper form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 1rem;
+}
+.container-wrapper form input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #d3d3eb;
+  padding-bottom: 7px;
+  color: #ffc212;
+}
+.button-createAccount-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  gap: 1rem;
+}
+
+.main-login {
+  grid-area: 2 / 1 / 3 / 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.image-login img {
+  width: 300px;
+  height: 250px;
+}
+.image-login {
+  display: flex;
+  justify-content: center;
+}
+.title-login {
+  display: flex;
+  justify-content: center;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* gap: 1rem; */
+}
+.button-login {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+
+  gap: 1rem;
+}
+.container-wrapper-login {
+  margin-top: 10px;
+}
+.btn-login {
+  margin-top: 0;
+}
+.link-create-account {
+  display: flex;
+  justify-content: center;
+}
+.link-create-account a,
+.button-login a,
+.button-createAccount-login a {
+  text-decoration: none;
+  color: #ffc212;
+}
+::placeholder {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 700;
+}
+.arrow {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+.arrow img {
+  width: 37px;
+  height: 35px;
 }
