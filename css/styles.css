@@ -143,10 +143,10 @@ body {
   margin: 0;
   font-family: sans-serif;
   /* letter-spacing: 0.11em; */
-  color: #ab7657;
+  /* color: #ab7657; */
 }
 .description-home {
-  color: #8e5e43;
+  /* color: #8e5e43; */
   font-weight: 500;
   line-height: 1.8;
   padding: 0 10rem 0 0.6rem;
@@ -166,13 +166,15 @@ body {
   letter-spacing: 0.05rem;
   font-weight: 700;
 }
-.order-button > a {
+.order-button {
   text-decoration: none;
-  color: #af8d7b;
+  /* color: #af8d7b; */
+  color: #fece2f;
 }
-.order-button:hover {
+.order .order-button:hover {
   background-color: #fece2f;
-  transition: background-color 0.5s;
+  transition: all 0.5s;
+  color: #000;
 }
 .img-home {
   height: 680px;
@@ -535,24 +537,26 @@ body {
   padding: 0.7em;
   border: none;
   background: none;
-  color: #fff;
-  border-bottom: 1px solid #d63031;
+  color: #fece2f;
+  border-bottom: 1px solid #d3d3eb;
   outline: none;
 }
 
 .contact-form form button {
-  background: #b70e21;
-  border: 0;
+  background: transparent;
+  border: 1px solid #ffc212;
   text-transform: uppercase;
   padding: 1em;
-  color: #000;
+  color: #ffc212;
 }
 
 .contact-form form button:hover,
 .contact-form form button:focus {
-  background: #d63031;
-  color: #fff;
-  transition: background-color 0.7s ease-in-out;
+  background: #ffc212;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  transition: background-color, letter-spacing 0.7s ease-in-out;
   outline: none;
 }
 
@@ -838,12 +842,13 @@ body {
   margin: 0;
   padding: 0;
   /* min-height: 100vh; */
-  background-color: #1f222b;
+  /* background-color: #1f222b; */
+  /* background-color: #222222; */
   /* background-color: #28292b; */
   /* background-color: lightgray; */
   /* background-color: #fff; */
-  /* background-color: #000; */
-  background-color: #1f1a30;
+  background-color: rgb(3, 4, 12);
+  /* background-color: #1f1a30; */
   color: #fff;
   overflow-x: hidden;
   width: 100%;
