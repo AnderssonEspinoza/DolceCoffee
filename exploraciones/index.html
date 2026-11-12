@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Tres formas de sentir Dolce Coffee</title>
+    <link rel="stylesheet" href="picker.css" />
+    <script src="picker.js" defer></script>
+  </head>
+  <body>
+    <header class="comparison-header">
+      <div class="comparison-top">
+        <a href="../index.html">Dolce Coffee</a
+        ><span>Exploración de diseño · Solo local</span
+        ><a id="open-direction" href="mesa.html" target="_blank" rel="noopener"
+          >Abrir propuesta completa <span aria-hidden="true">↗</span></a
+        >
+      </div>
+      <div
+        class="direction-picker"
+        role="group"
+        aria-label="Elegir propuesta visual"
+      >
+        <button data-direction="mesa" aria-pressed="true">
+          <span class="swatch table-swatch" aria-hidden="true"></span
+          ><span>La mesa de siempre</span></button
+        ><button data-direction="encuentro" aria-pressed="false">
+          <span class="swatch together-swatch" aria-hidden="true"></span
+          ><span>Un café y me cuentas</span></button
+        ><button data-direction="ritmo" aria-pressed="false">
+          <span class="swatch own-swatch" aria-hidden="true"></span
+          ><span>A tu ritmo</span>
+        </button>
+      </div>
+      <div class="comparison-detail">
+        <p id="direction-description" role="status">
+          Blanco y azul tinta. Letras de lectura tranquila y una fotografía que
+          te deja entrar al lugar.
+        </p>
+        <div
+          class="viewport-picker"
+          role="group"
+          aria-label="Ancho de la vista previa"
+        >
+          <button data-viewport="full" aria-pressed="true">Escritorio</button
+          ><button data-viewport="phone" aria-pressed="false">Móvil</button>
+        </div>
+      </div>
+    </header>
+    <main class="preview-stage">
+      <iframe
+        id="direction-frame"
+        title="Propuesta La mesa de siempre"
+        src="mesa.html"
+      ></iframe>
+    </main>
+  </body>
+</html>

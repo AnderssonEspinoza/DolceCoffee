@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="noindex" />
+    <title>A tu ritmo · Dolce Coffee</title>
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="concepts.css" />
+  </head>
+  <body class="own">
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+    <div id="inicio"></div>
+    <header class="site-nav">
+      <a class="wordmark" href="#inicio" aria-label="Dolce Coffee, inicio"
+        >dolce coffee</a
+      >
+      <nav aria-label="Navegación principal">
+        <a href="#carta">La carta</a><a href="#momento">El momento Dolce</a>
+      </nav>
+      <a class="nav-cta" href="../pages/productos.html" target="_top"
+        >Elegir mi café
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+      ></a>
+    </header>
+    <main id="contenido">
+      <section class="own-hero">
+        <div class="own-photo">
+          <img
+            id="moment-photo"
+            src="assets/ventana.jpg"
+            alt="Una persona con audífonos trabaja en su laptop junto a la ventana de un café"
+            width="1400"
+            height="934"
+            fetchpriority="high"
+          /><span>Un poco de espacio para ti.</span>
+        </div>
+        <div class="own-copy">
+          <div
+            class="moment-choices"
+            role="group"
+            aria-label="¿Cómo vienes hoy?"
+          >
+            <button data-moment="solo" aria-pressed="true">A mi aire</button
+            ><button data-moment="ideas" aria-pressed="false">
+              Con mis ideas</button
+            ><button data-moment="gente" aria-pressed="false">
+              En compañía
+            </button>
+          </div>
+          <div class="moment-content" aria-live="polite" aria-atomic="true">
+            <h1 id="moment-title">Tu café.<br /> El resto puede esperar.</h1>
+            <p id="moment-description">
+              Ponte esa canción. Mira por la ventana. No hace falta llenar cada
+              minuto.
+            </p>
+          </div>
+          <a class="solid-link" href="../pages/productos.html" target="_top"
+            >Buscar mi café
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+          ></a>
+          <p class="own-footnote">
+            Cada día se siente distinto.<br /> Tu pausa también puede serlo.
+          </p>
+        </div>
+      </section>
+      <section id="momento" class="own-manifesto">
+        <h2>Estar aquí.<br /> Eso también cuenta.</h2>
+        <p>
+          Para despejarte, avanzar a tu manera o no hacer nada por un rato. Sin
+          tener que convertir tu café en otra tarea del día.
+        </p>
+      </section>
+      <section id="carta" class="own-menu">
+        <div class="menu-heading">
+          <h2>Empieza por lo que te gusta.</h2>
+          <a href="../pages/productos.html" target="_top"
+            >Explorar la carta
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+          ></a>
+        </div>
+        <div class="own-products">
+          <article class="coffee-item">
+            <a
+              href="../pages/productos.html"
+              target="_top"
+              aria-label="Ver Espresso en la carta"
+              ><img
+                src="../assets/images/cup-2.png"
+                alt="Espresso"
+                width="240"
+                height="240"
+                loading="lazy"
+            /></a>
+            <div>
+              <h3>Espresso</h3>
+              <p>Un café corto. Un momento tuyo.</p>
+            </div>
+            <span class="price">$12.99</span>
+          </article>
+          <article class="coffee-item">
+            <a
+              href="../pages/productos.html"
+              target="_top"
+              aria-label="Ver Latte en la carta"
+              ><img
+                src="../assets/images/cup-5.png"
+                alt="Latte"
+                width="240"
+                height="240"
+                loading="lazy"
+            /></a>
+            <div>
+              <h3>Latte</h3>
+              <p>Para tomártelo a tu ritmo.</p>
+            </div>
+            <span class="price">$12.99</span>
+          </article>
+          <article class="coffee-item">
+            <a
+              href="../pages/productos.html"
+              target="_top"
+              aria-label="Ver Empanadas en la carta"
+              ><img
+                src="../assets/images/f-1.png"
+                alt="Empanadas"
+                width="240"
+                height="240"
+                loading="lazy"
+            /></a>
+            <div>
+              <h3>Empanadas</h3>
+              <p>Por si la pausa se alarga.</p>
+            </div>
+            <span class="price">$13.99</span>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="concept-footer">
+      <a class="wordmark" href="#inicio">Dolce Coffee</a>
+      <p>Un café. Un momento. A tu manera.</p>
+      <a href="../pages/contactos.html" target="_top">Conversemos</a>
+    </footer>
+    <p class="photo-note">
+      Propuesta visual local. Fotografías de ambiente de referencia; no
+      representan el local de Dolce Coffee.
+      <a href="FUENTES.md" target="_blank">Fuentes</a>
+    </p>
+    <script src="moments.js"></script>
+  </body>
+</html>
