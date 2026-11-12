@@ -1,189 +1,704 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@300;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>Menú</title>
-</head>
-
-<body class="body-2">
-    <div class="container container-layaout-2">
-        <nav class="menu-nav">
-            <!-- Logo -->
-            <div class="home-logo">
-                <a href="index.html">
-                    <img src="../assets/images/—Pngtree—coffee illustration suitable for t-shirt_6404298.png"
-                        alt="logo coffee" class="img-logo">
-                </a>
-                <span>
-                    <a href="../index.html"> Dolce Cofee</a>
-                </span>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#234c3b" />
+    <meta
+      name="description"
+      content="Dolce Coffee. Encuentra tu próxima pausa entre cafés, antojos dulces y bocados salados."
+    />
+    <title>La carta | Dolce Coffee</title>
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script type="module" src="../js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Dolce Coffee, inicio"
+        ><svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 8h12v7a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5V8Zm12 1h2a3 3 0 1 1 0 6h-2M8 3v2m4-2v2m4-2v2"
+          /></svg
+        ><span>dolce<span class="brand-small">coffee</span></span></a
+      >
+      <nav class="navigation" id="navigation" aria-label="Navegación principal">
+        <a href="../index.html">Inicio</a
+        ><a href="../pages/productos.html" aria-current="page">La carta</a
+        ><a href="../pages/sobre_nosotros.html">Nosotros</a
+        ><a href="../pages/opiniones.html">Opiniones</a
+        ><a href="../pages/contactos.html">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <a
+          class="icon-button account-link"
+          href="../pages/welcome.html"
+          aria-label="Mi cuenta"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="8" r="3" />
+            <path d="M5 21v-2a7 7 0 0 1 14 0v2" /></svg></a
+        ><button
+          class="icon-button"
+          data-cart-open
+          aria-label="Ver mi selección"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M6 7h12l1 13H5L6 7Z" />
+            <path d="M9 8V6a3 3 0 0 1 6 0v2" /></svg
+          ><span class="cart-count" data-count>0</span></button
+        ><button
+          class="icon-button menu-toggle"
+          aria-controls="navigation"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main id="contenido">
+      <section class="page-intro wrap">
+        <h1>Una carta.<br />Muchos antojos.</h1>
+        <p>De tu café de siempre a ese bocado que te alegra el día.</p>
+      </section>
+      <section class="wrap menu-section">
+        <div class="filter-bar" role="group" aria-label="Filtrar productos">
+          <button data-filter="all" aria-pressed="true">
+            Toda la carta <span>15</span></button
+          ><button data-filter="cafe" aria-pressed="false">
+            Cafés <span>9</span></button
+          ><button data-filter="comida" aria-pressed="false">
+            Para acompañar <span>6</span>
+          </button>
+        </div>
+        <p class="sr-only" id="filter-status" role="status"></p>
+        <div class="product-grid">
+          <article class="product" data-category="cafe">
+            <div class="product-image tone-0">
+              <img
+                src="../assets/images/cup-2.png"
+                alt="Espresso"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
             </div>
-            <!-- Logo -->
-
-            <!------------ Navigation menu ----------->
-            <!-- Icon Menu-bar responsive -->
-            <label for="menu" class="nav-label">
-                <img src="../assets/icons/menu.svg" alt="bar icon" class="nav-img">
-            </label>
-            <input type="checkbox" id="menu" class="nav-input">
-            <!-- ----------------------- -->
-
-            <div class="nav__list">
-                <a href="../index.html">Home</a>
-                <a href="productos.html">Productos</a>
-                <a href="sobre_nosotros.html">Sobre Nosotros</a>
-                <a href="opiniones.html">Opiniones</a>
-                <a href="contactos.html">Contactos</a>
-                <a href="welcome.html">Login</a>
+            <div class="product-heading">
+              <h3>Espresso</h3>
+              <span>$12.99</span>
             </div>
-            <!-- ------------------------------------------ -->
-            <div class="shop-register">
-                <a href="#" class="icon-shop">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
-                <a href="welcome.html" class="icon-register">
-                    <i class="fas fa-user"></i>
-                </a>
+            <p>Intenso, corto y con carácter.</p>
+            <button
+              class="add-product"
+              data-add="0"
+              aria-label="Agregar Espresso a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+          <article class="product" data-category="cafe">
+            <div class="product-image tone-1">
+              <img
+                src="../assets/images/cup-1.png"
+                alt="Americano"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
             </div>
+            <div class="product-heading">
+              <h3>Americano</h3>
+              <span>$12.99</span>
+            </div>
+            <p>El clásico para tomártelo con calma.</p>
+            <button
+              class="add-product"
+              data-add="1"
+              aria-label="Agregar Americano a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+          <article class="product" data-category="cafe">
+            <div class="product-image tone-2">
+              <img
+                src="../assets/images/cup-4.png"
+                alt="Cappuccino"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
+            </div>
+            <div class="product-heading">
+              <h3>Cappuccino</h3>
+              <span>$12.99</span>
+            </div>
+            <p>Café y una suave capa de espuma.</p>
+            <button
+              class="add-product"
+              data-add="2"
+              aria-label="Agregar Cappuccino a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+          <article class="product" data-category="cafe">
+            <div class="product-image tone-0">
+              <img
+                src="../assets/images/cup-5.png"
+                alt="Latte"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
+            </div>
+            <div class="product-heading">
+              <h3>Latte</h3>
+              <span>$12.99</span>
+            </div>
+            <p>Una pausa con más leche y suavidad.</p>
+            <button
+              class="add-product"
+              data-add="3"
+              aria-label="Agregar Latte a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+          <article class="product" data-category="cafe">
+            <div class="product-image tone-1">
+              <img
+                src="../assets/images/cup-3.png"
+                alt="Café con leche"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
+            </div>
+            <div class="product-heading">
+              <h3>Café con leche</h3>
+              <span>$12.99</span>
+            </div>
+            <p>Tu compañero de cada mañana.</p>
+            <button
+              class="add-product"
+              data-add="4"
+              aria-label="Agregar Café con leche a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+          <article class="product" data-category="cafe">
+            <div class="product-image tone-2">
+              <img
+                src="../assets/images/cup-6.png"
+                alt="Latte art"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
+            </div>
+            <div class="product-heading">
+              <h3>Latte art</h3>
+              <span>$12.99</span>
+            </div>
+            <p>Un pequeño detalle en tu taza.</p>
+            <button
+              class="add-product"
+              data-add="5"
+              aria-label="Agregar Latte art a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+          <article class="product" data-category="cafe">
+            <div class="product-image tone-0">
+              <img
+                src="../assets/images/cup-7.png"
+                alt="Cappuccino clásico"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
+            </div>
+            <div class="product-heading">
+              <h3>Cappuccino clásico</h3>
+              <span>$12.99</span>
+            </div>
+            <p>Espuma y café en equilibrio.</p>
+            <button
+              class="add-product"
+              data-add="6"
+              aria-label="Agregar Cappuccino clásico a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+          <article class="product" data-category="cafe">
+            <div class="product-image tone-1">
+              <img
+                src="../assets/images/cup-8.png"
+                alt="Café de la casa"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
+            </div>
+            <div class="product-heading">
+              <h3>Café de la casa</h3>
+              <span>$12.99</span>
+            </div>
+            <p>Una taza para empezar de nuevo.</p>
+            <button
+              class="add-product"
+              data-add="7"
+              aria-label="Agregar Café de la casa a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+          <article class="product" data-category="cafe">
+            <div class="product-image tone-2">
+              <img
+                src="../assets/images/cup-5.png"
+                alt="Latte suave"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
+            </div>
+            <div class="product-heading">
+              <h3>Latte suave</h3>
+              <span>$12.99</span>
+            </div>
+            <p>Para alargar la sobremesa.</p>
+            <button
+              class="add-product"
+              data-add="8"
+              aria-label="Agregar Latte suave a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+          <article class="product" data-category="comida">
+            <div class="product-image tone-0">
+              <img
+                src="../assets/images/f-1.png"
+                alt="Empanadas"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
+            </div>
+            <div class="product-heading">
+              <h3>Empanadas</h3>
+              <span>$13.99</span>
+            </div>
+            <p>El acompañamiento de tu café.</p>
+            <button
+              class="add-product"
+              data-add="9"
+              aria-label="Agregar Empanadas a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+          <article class="product" data-category="comida">
+            <div class="product-image tone-1">
+              <img
+                src="../assets/images/f-2.png"
+                alt="Bocados salados"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
+            </div>
+            <div class="product-heading">
+              <h3>Bocados salados</h3>
+              <span>$13.99</span>
+            </div>
+            <p>Para ese antojo entre horas.</p>
+            <button
+              class="add-product"
+              data-add="10"
+              aria-label="Agregar Bocados salados a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+          <article class="product" data-category="comida">
+            <div class="product-image tone-2">
+              <img
+                src="../assets/images/f-3.png"
+                alt="Hamburguesa"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
+            </div>
+            <div class="product-heading">
+              <h3>Hamburguesa</h3>
+              <span>$13.99</span>
+            </div>
+            <p>Una pausa con mucho más.</p>
+            <button
+              class="add-product"
+              data-add="11"
+              aria-label="Agregar Hamburguesa a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+          <article class="product" data-category="comida">
+            <div class="product-image tone-0">
+              <img
+                src="../assets/images/f-4.png"
+                alt="Sándwich"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
+            </div>
+            <div class="product-heading">
+              <h3>Sándwich</h3>
+              <span>$13.99</span>
+            </div>
+            <p>Un clásico que siempre apetece.</p>
+            <button
+              class="add-product"
+              data-add="12"
+              aria-label="Agregar Sándwich a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+          <article class="product" data-category="comida">
+            <div class="product-image tone-1">
+              <img
+                src="../assets/images/f-5.png"
+                alt="Alfajores"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
+            </div>
+            <div class="product-heading">
+              <h3>Alfajores</h3>
+              <span>$13.99</span>
+            </div>
+            <p>El lado dulce de tu día.</p>
+            <button
+              class="add-product"
+              data-add="13"
+              aria-label="Agregar Alfajores a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+          <article class="product" data-category="comida">
+            <div class="product-image tone-2">
+              <img
+                src="../assets/images/f-6.png"
+                alt="Sándwich especial"
+                loading="lazy"
+                width="240"
+                height="240"
+              />
+            </div>
+            <div class="product-heading">
+              <h3>Sándwich especial</h3>
+              <span>$13.99</span>
+            </div>
+            <p>Hazle espacio a un buen bocado.</p>
+            <button
+              class="add-product"
+              data-add="14"
+              aria-label="Agregar Sándwich especial a mi selección"
+            >
+              Agregar a mi selección
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-top">
+        <a class="brand" href="../index.html"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M5 8h12v7a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5V8Zm12 1h2a3 3 0 1 1 0 6h-2M8 3v2m4-2v2m4-2v2"
+            /></svg
+          ><span>dolce<span class="brand-small">coffee</span></span></a
+        >
+        <p>La vida pasa.<br />El café se disfruta.</p>
+        <a href="../pages/productos.html" class="footer-link"
+          >Encuentra tu próxima pausa
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+        ></a>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Dolce Coffee</span>
+        <nav aria-label="Navegación del pie">
+          <a href="../index.html">Inicio</a
+          ><a href="../pages/productos.html" aria-current="page">La carta</a
+          ><a href="../pages/sobre_nosotros.html">Nosotros</a
+          ><a href="../pages/opiniones.html">Opiniones</a
+          ><a href="../pages/contactos.html">Contacto</a>
         </nav>
-
-        <main class="main main-productos main-second">
-
-            <h2 class="nuestro-menu">Nuestro<span> menú</span></h2>
-            <div class="products">
-
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/cup-1.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$12.99</h4>
-                    <button>Agregar</button>
-                </div>
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/cup-2.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$12.99</h4>
-                    <button>Agregar</button>
-                </div>
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/cup-3.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$12.99</h4>
-                    <button>Agregar</button>
-                </div>
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/cup-4.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$12.99</h4>
-                    <button>Agregar</button>
-                </div>
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/cup-5.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$12.99</h4>
-                    <button>Agregar</button>
-                </div>
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/cup-6.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$12.99</h4>
-                    <button>Agregar</button>
-                </div>
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/cup-7.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$12.99</h4>
-                    <button>Agregar</button>
-                </div>
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/cup-8.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$12.99</h4>
-                    <button>Agregar</button>
-                </div>
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/cup-5.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$12.99</h4>
-                    <button>Agregar</button>
-                </div>
-            </div>
-
-            <h2 class="nuestro-menu">Empanadas y <span>Sandwiches</span></h2>
-            <div class="products">
-
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/f-1.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$13.99</h4>
-                    <button>Agregar</button>
-                </div>
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/f-2.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$13.99</h4>
-                    <button>Agregar</button>
-                </div>
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/f-3.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$13.99</h4>
-                    <button>Agregar</button>
-                </div>
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/f-4.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$13.99</h4>
-                    <button>Agregar</button>
-                </div>
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/f-5.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$13.99</h4>
-                    <button>Agregar</button>
-                </div>
-                <div class="products-items">
-                    <img loading="lazy" src="../assets/images/f-6.png" alt="" srcset="">
-                    <p>Rico y saludable</p>
-                    <h4>$13.99</h4>
-                    <button>Agregar</button>
-                </div>
-            </div>
-
-
-        </main>
-        <!------- Inicio del footer--------- -->
-        <footer class="footer footer-2">
-            <p class="footer-copyr">
-                © Todos los derechos reservados 2021-2030
-            </p>
-            <div class="icons-rsocials">
-                <a href="#" class="f-icon">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="#" class="ig-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="tw-icon">
-                    <i class="fab fa-twitter"></i>
-                </a>
-            </div>
-        </footer>
-        </footer>
-        <!------------- Fin del footer  ----------->
-    </div>
-
-</body>
-
+        <span>Hecho para disfrutar.</span>
+      </div>
+    </footer>
+    <dialog class="cart-dialog" aria-labelledby="cart-title">
+      <div class="cart-header">
+        <h2 id="cart-title">Tu selección</h2>
+        <button
+          class="icon-button"
+          data-cart-close
+          aria-label="Cerrar selección"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M6 18 18 6" />
+          </svg>
+        </button>
+      </div>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <span>Total</span><strong id="cart-total">$0.00</strong>
+      </div>
+      <p class="form-note">
+        Tu selección se guarda en este navegador. Los pedidos y pagos en línea
+        todavía no están disponibles.
+      </p>
+      <button class="button secondary" data-cart-close>
+        Seguir explorando
+      </button>
+    </dialog>
+    <div class="toast" role="status" aria-live="polite"></div>
+  </body>
 </html>

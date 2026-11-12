@@ -1,147 +1,210 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@300;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <title>About us</title>
-</head>
-
-<body class="body body-2">
-    <div class="container container-layaout-2">
-        <nav class="menu-nav">
-            <!-- Logo -->
-            <div class="home-logo">
-                <a href="index.html">
-                    <img src="../assets/images/—Pngtree—coffee illustration suitable for t-shirt_6404298.png"
-                        alt="logo coffee" class="img-logo">
-                </a>
-                <span>
-                    <a href="../index.html"> Dolce Cofee</a>
-                </span>
-            </div>
-            <!-- Logo -->
-
-            <!------------ Navigation menu ----------->
-            <!-- Icon Menu-bar responsive -->
-            <label for="menu" class="nav-label">
-                <img src="../assets/icons/menu.svg" alt="bar icon" class="nav-img">
-            </label>
-            <input type="checkbox" id="menu" class="nav-input">
-            <!-- ----------------------- -->
-
-            <div class="nav__list">
-                <a href="../index.html">Home</a>
-                <a href="productos.html">Productos</a>
-                <a href="sobre_nosotros.html">Sobre Nosotros</a>
-                <a href="opiniones.html">Opiniones</a>
-                <a href="contactos.html">Contactos</a>
-                <a href="welcome.html">Login</a>
-            </div>
-            <!-- ------------------------------------------ -->
-            <div class="shop-register">
-                <a href="#" class="icon-shop">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
-                <a href="welcome.html" class="icon-register">
-                    <i class="fas fa-user"></i>
-                </a>
-            </div>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#234c3b" />
+    <meta
+      name="description"
+      content="Dolce Coffee. Encuentra tu próxima pausa entre cafés, antojos dulces y bocados salados."
+    />
+    <title>Nosotros | Dolce Coffee</title>
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script type="module" src="../js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Dolce Coffee, inicio"
+        ><svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 8h12v7a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5V8Zm12 1h2a3 3 0 1 1 0 6h-2M8 3v2m4-2v2m4-2v2"
+          /></svg
+        ><span>dolce<span class="brand-small">coffee</span></span></a
+      >
+      <nav class="navigation" id="navigation" aria-label="Navegación principal">
+        <a href="../index.html">Inicio</a
+        ><a href="../pages/productos.html">La carta</a
+        ><a href="../pages/sobre_nosotros.html" aria-current="page">Nosotros</a
+        ><a href="../pages/opiniones.html">Opiniones</a
+        ><a href="../pages/contactos.html">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <a
+          class="icon-button account-link"
+          href="../pages/welcome.html"
+          aria-label="Mi cuenta"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="8" r="3" />
+            <path d="M5 21v-2a7 7 0 0 1 14 0v2" /></svg></a
+        ><button
+          class="icon-button"
+          data-cart-open
+          aria-label="Ver mi selección"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M6 7h12l1 13H5L6 7Z" />
+            <path d="M9 8V6a3 3 0 0 1 6 0v2" /></svg
+          ><span class="cart-count" data-count>0</span></button
+        ><button
+          class="icon-button menu-toggle"
+          aria-controls="navigation"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main id="contenido">
+      <section class="page-intro wrap">
+        <h1>Un buen café.<br />Una buena pausa.</h1>
+        <p>Empieza tu día con Dolce Coffee.</p>
+      </section>
+      <section class="story-preview wrap about-story">
+        <div class="story-photo">
+          <img
+            src="../assets/images/barista-cafe-making-coffee-preparation-service-concept.jpg"
+            alt="Un barista prepara una bebida de café"
+            width="600"
+            height="500"
+          />
+        </div>
+        <div class="story-copy">
+          <h2>El gusto por<br />lo simple.</h2>
+          <p>
+            Una taza de café y algo rico para acompañarla. En Dolce Coffee, esa
+            es nuestra forma favorita de hacer una pausa.
+          </p>
+          <p>
+            Explora nuestra carta de cafés, empanadas, sándwiches y bocados
+            dulces. Hay un antojo para cada momento del día.
+          </p>
+          <a class="button" href="productos.html">Descubrir la carta</a>
+        </div>
+      </section>
+      <section class="manifesto wrap">
+        <h2>Un momento para ti.</h2>
+        <p>
+          Para conversar. Para despejarte. Para sentarte un rato y disfrutar de
+          tu café. Tú eliges el momento; nosotros ponemos el lado dolce.
+        </p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-top">
+        <a class="brand" href="../index.html"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M5 8h12v7a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5V8Zm12 1h2a3 3 0 1 1 0 6h-2M8 3v2m4-2v2m4-2v2"
+            /></svg
+          ><span>dolce<span class="brand-small">coffee</span></span></a
+        >
+        <p>La vida pasa.<br />El café se disfruta.</p>
+        <a href="../pages/productos.html" class="footer-link"
+          >Encuentra tu próxima pausa
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+        ></a>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Dolce Coffee</span>
+        <nav aria-label="Navegación del pie">
+          <a href="../index.html">Inicio</a
+          ><a href="../pages/productos.html">La carta</a
+          ><a href="../pages/sobre_nosotros.html" aria-current="page"
+            >Nosotros</a
+          ><a href="../pages/opiniones.html">Opiniones</a
+          ><a href="../pages/contactos.html">Contacto</a>
         </nav>
-
-        <main class="main main-aboutUs main-second main-productos">
-            <h2>ABOUT US</h2>
-            <!-- <div class="content-about"> -->
-
-            <div class="quienes-somos">
-                <img loading="lazy" src="../assets/images/barista-in-face-mark-at-coffee-shop-in-new-normal.jpg" alt=""
-                    srcset="" class="img-aboutUs">
-                <div class="quienes-somos_descirption about-description">
-                    <h2>¿Quienes somos?</h2>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi a sequi vero at error
-                        veritatis,
-                        ducimus, dolorem illo nemo, velit aliquid mollitia eius fugit quisquam voluptatibus. Quis
-                        omnis
-                        laboriosam fuga.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non laudantium neque voluptate sunt
-                        eligendi pariatur sint praesentium saepe eaque? Cupiditate accusamus ab ducimus magni
-                        deserunt
-                        aut
-                        est quasi numquam eos.
-                        Aliquam natus harum, excepturi nam et nisi neque quod facilis placeat explicabo voluptatum
-                        enim
-                        officia nemo ducimus corporis impedit ipsam fuga quia veniam perferendis ratione, blanditiis
-                        voluptas laboriosam nostrum? Nostrum.
-                        Quae architecto quaerat nihil sapiente maxime exercitationem animi illo saepe unde.
-                    </p>
-                </div>
-            </div>
-
-            <div class="nuestra-mision">
-                <img loading="lazy" src="../assets/images/barista-cafe-making-coffee-preparation-service-concept.jpg"
-                    class="img-aboutUs">
-                <div class="nuestra-mision_descirption about-description">
-                    <h2>Nuestra Misión</h2>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi a sequi vero at error
-                        veritatis,
-                        ducimus, dolorem illo nemo, velit aliquid mollitia eius fugit quisquam voluptatibus. Quis
-                        omnis
-                        laboriosam fuga.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non laudantium neque voluptate sunt
-                        eligendi pariatur sint praesentium saepe eaque? Cupiditate accusamus ab ducimus magni
-                        deserunt
-                        aut
-                        est quasi numquam eos.
-                        Aliquam natus harum, excepturi nam et nisi neque quod facilis placeat explicabo voluptatum
-                        enim
-                        officia nemo ducimus corporis impedit ipsam fuga quia veniam perferendis ratione, blanditiis
-                        voluptas laboriosam nostrum? Nostrum.
-                        Quae architecto quaerat nihil sapiente maxime exercitationem animi illo saepe unde.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="img-phrase">
-                <img src="../assets/images/taxi-coffee-break-1.png" alt="" srcset="">
-                <p><span>DOLCE COFFEE</span>, empieza tu día con un buen café.</p>
-            </div>
-
-            <!-- </div> -->
-        </main>
-        <!------- Inicio del footer--------- -->
-        <footer class="footer footer-2">
-            <p class="footer-copyr">
-                © Todos los derechos reservados 2021-2030
-            </p>
-            <div class="icons-rsocials">
-                <a href="#" class="f-icon">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="#" class="ig-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="tw-icon">
-                    <i class="fab fa-twitter"></i>
-                </a>
-            </div>
-        </footer>
-
-        <!------------- Fin del footer  ----------->
-    </div>
-
-</body>
-
+        <span>Hecho para disfrutar.</span>
+      </div>
+    </footer>
+    <dialog class="cart-dialog" aria-labelledby="cart-title">
+      <div class="cart-header">
+        <h2 id="cart-title">Tu selección</h2>
+        <button
+          class="icon-button"
+          data-cart-close
+          aria-label="Cerrar selección"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M6 18 18 6" />
+          </svg>
+        </button>
+      </div>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <span>Total</span><strong id="cart-total">$0.00</strong>
+      </div>
+      <p class="form-note">
+        Tu selección se guarda en este navegador. Los pedidos y pagos en línea
+        todavía no están disponibles.
+      </p>
+      <button class="button secondary" data-cart-close>
+        Seguir explorando
+      </button>
+    </dialog>
+    <div class="toast" role="status" aria-live="polite"></div>
+  </body>
 </html>

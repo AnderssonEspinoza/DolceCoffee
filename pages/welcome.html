@@ -1,95 +1,200 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
-</head>
-
-<body class="body-welcome">
-    <div class="container-welcome">
-        <nav class="menu-nav">
-            <!-- Logo -->
-            <div class="home-logo">
-                <a href="index.html">
-                    <img src="../assets/images/—Pngtree—coffee illustration suitable for t-shirt_6404298.png"
-                        alt="logo coffee" class="img-logo">
-                </a>
-                <span>
-                    <a href="../index.html"> Dolce Cofee</a>
-                </span>
-            </div>
-            <!-- Logo -->
-
-            <!------------ Navigation menu ----------->
-            <!-- Icon Menu-bar responsive -->
-            <label for="menu" class="nav-label">
-                <img src="../assets/icons/menu.svg" alt="bar icon" class="nav-img">
-            </label>
-            <input type="checkbox" id="menu" class="nav-input">
-            <!-- ----------------------- -->
-
-            <div class="nav__list">
-                <a href="../index.html">Home</a>
-                <a href="productos.html">Productos</a>
-                <a href="sobre_nosotros.html">Sobre Nosotros</a>
-                <a href="opiniones.html">Opiniones</a>
-                <a href="contactos.html">Contactos</a>
-            </div>
-            <!-- ------------------------------------------ -->
-            <div class="shop-register">
-                <a href="#" class="icon-shop">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
-                <a href="#" class="icon-register">
-                    <i class="fas fa-user"></i>
-                </a>
-            </div>
-        </nav>
-        <div class="container-welcome">
-            <div class="titles">
-                <h1 class="title-1">Hola</h1>
-                <h1 class="title-2">Coffee Lover!</h1>
-                <div class="titles_image">
-                    <h3 class="subtitle">Bienvenido a <span>
-
-                            Dolce Coffee</h3>
-                    </span>
-                    <div class="img-t1">
-                        <img src="../assets/images/open-doodles-coffee-2.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="container-img ">
-                <img src="../assets/images/looney-35.png" alt="">
-            </div>
-            <!-- <div class="container-img">
-                <div class="container-image">
-                    <img class="image" src="../assets/images/open-doodles-coffee.png" alt="">
-                </div>
-            </div> -->
-
-            <div class="container_buttons">
-                <a href="login-in.html">
-                    <button class="button_cliente-habitual">
-                        Cliente Habitual
-                    </button>
-                </a>
-                <a href="loginup.html">
-                    <button class="button_cliente-nuevo">
-                        Cliente Nuevo
-                    </button>
-                </a>
-            </div>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#234c3b" />
+    <meta
+      name="description"
+      content="Dolce Coffee. Encuentra tu próxima pausa entre cafés, antojos dulces y bocados salados."
+    />
+    <title>Mi cuenta | Dolce Coffee</title>
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script type="module" src="../js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Dolce Coffee, inicio"
+        ><svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 8h12v7a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5V8Zm12 1h2a3 3 0 1 1 0 6h-2M8 3v2m4-2v2m4-2v2"
+          /></svg
+        ><span>dolce<span class="brand-small">coffee</span></span></a
+      >
+      <nav class="navigation" id="navigation" aria-label="Navegación principal">
+        <a href="../index.html">Inicio</a
+        ><a href="../pages/productos.html">La carta</a
+        ><a href="../pages/sobre_nosotros.html">Nosotros</a
+        ><a href="../pages/opiniones.html">Opiniones</a
+        ><a href="../pages/contactos.html">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <a
+          class="icon-button account-link"
+          href="../pages/welcome.html"
+          aria-label="Mi cuenta"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="8" r="3" />
+            <path d="M5 21v-2a7 7 0 0 1 14 0v2" /></svg></a
+        ><button
+          class="icon-button"
+          data-cart-open
+          aria-label="Ver mi selección"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M6 7h12l1 13H5L6 7Z" />
+            <path d="M9 8V6a3 3 0 0 1 6 0v2" /></svg
+          ><span class="cart-count" data-count>0</span></button
+        ><button
+          class="icon-button menu-toggle"
+          aria-controls="navigation"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main id="contenido">
+      <section class="welcome-layout wrap">
+        <div>
+          <h1>Hola,<br />coffee lover.</h1>
+          <p>Bienvenido a tu momento Dolce.</p>
+          <div class="welcome-actions">
+            <a class="button" href="login-in.html">Ya tengo una cuenta</a
+            ><a class="text-link" href="loginup.html"
+              >Quiero crear una cuenta</a
+            >
+          </div>
+          <p class="form-note">
+            Las cuentas estarán disponibles cuando se active el servicio. Puedes
+            explorar la carta sin registrarte.
+          </p>
         </div>
-    </div>
-
-</body>
-
+        <div class="welcome-art">
+          <img
+            src="../assets/images/looney-35.png"
+            alt=""
+            width="400"
+            height="400"
+          />
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-top">
+        <a class="brand" href="../index.html"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M5 8h12v7a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5V8Zm12 1h2a3 3 0 1 1 0 6h-2M8 3v2m4-2v2m4-2v2"
+            /></svg
+          ><span>dolce<span class="brand-small">coffee</span></span></a
+        >
+        <p>La vida pasa.<br />El café se disfruta.</p>
+        <a href="../pages/productos.html" class="footer-link"
+          >Encuentra tu próxima pausa
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+        ></a>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Dolce Coffee</span>
+        <nav aria-label="Navegación del pie">
+          <a href="../index.html">Inicio</a
+          ><a href="../pages/productos.html">La carta</a
+          ><a href="../pages/sobre_nosotros.html">Nosotros</a
+          ><a href="../pages/opiniones.html">Opiniones</a
+          ><a href="../pages/contactos.html">Contacto</a>
+        </nav>
+        <span>Hecho para disfrutar.</span>
+      </div>
+    </footer>
+    <dialog class="cart-dialog" aria-labelledby="cart-title">
+      <div class="cart-header">
+        <h2 id="cart-title">Tu selección</h2>
+        <button
+          class="icon-button"
+          data-cart-close
+          aria-label="Cerrar selección"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M6 18 18 6" />
+          </svg>
+        </button>
+      </div>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <span>Total</span><strong id="cart-total">$0.00</strong>
+      </div>
+      <p class="form-note">
+        Tu selección se guarda en este navegador. Los pedidos y pagos en línea
+        todavía no están disponibles.
+      </p>
+      <button class="button secondary" data-cart-close>
+        Seguir explorando
+      </button>
+    </dialog>
+    <div class="toast" role="status" aria-live="polite"></div>
+  </body>
 </html>
